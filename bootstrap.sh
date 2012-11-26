@@ -1,6 +1,10 @@
 #!/bin/bash
 cd "$(dirname "${BASH_SOURCE}")"
 git pull
+git submodule init
+git submodule update
+git submodule foreach git submodule init
+git submodule foreach git submodule update
 function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
 }
