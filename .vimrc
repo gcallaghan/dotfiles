@@ -1,6 +1,6 @@
 " Pathogen load files, requires filetype off
 filetype off
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
 
 
@@ -116,12 +116,25 @@ endif
 
 " Personal
 
+"Show whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace
+au InsertLeave * match ExtraWhitespace /\s\+$/
 " Convince Vim it can use colors in Gnome Terminal (needs CSApprox plugin)
 set t_Co=256
 
+" Task Lists
+map <leader>td <Plug>TaskList
 
-"enable mouse everywhere
-set mouse=a
+" RevisionHistory
+map <leader>g :GundoToggle<CR>
+
+"Clean Python
+let g:pyflakes_use_quickfix=0
+let g:pep8_map='<leader>8'
+
+"Tab Completion
+let g:SuperTabDefaultCompletionType = 'context'
 
 "hide mouse pointer while typeing:
 set mousehide
@@ -282,6 +295,7 @@ let python_highlight_all=1
 let python_highlight_exceptions=0
 let python_highlight_builtins=0
 autocmd FileType pyrex setlocal expandtab shiftwidth=4 tabstop=8 softtabstop=4 smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class,with
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " ruby support
 " ------------
@@ -349,11 +363,35 @@ autocmd FileType vim setlocal expandtab shiftwidth=2 tabstop=8 softtabstop=2
 " ----------
 autocmd FileType javascript setlocal expandtab shiftwidth=2 tabstop=2 softtabstop=2 colorcolumn=79
 let javascript_enable_domhtmlcss=1
-
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
+
+" Map sort function to a key
+vnoremap <leader>s :sort<CR>
+
+
+
+vmap Q gq
+nmap Q gqap
+
+" Automatic reload of .vimrc
+autocmd! bufwritepost .vimrc source %
+
+set tw=79
+set nowrap
+set fo-=t
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
+
+set history=700
+set undolevels=700
+
+
+
+ 
