@@ -281,7 +281,7 @@ nnoremap ; :
 
 " Disable the colorcolumn when switching modes.  Make sure this is the
 " first autocmd for the filetype here
-autocmd FileType * setlocal colorcolumn=0
+" autocmd FileType * setlocal colorcolumn=0
 
 " python support
 " --------------
@@ -310,7 +310,7 @@ fun! SelectHTML()
   while n < 50 && n < line("$")
     " check for jinja
     if getline(n) =~ '{%\s*\(extends\|block\|macro\|set\|if\|for\|include\|trans\)\>'
-      set ft=htmljinja
+      set ft=htmldjango
       return
     endif
     " check for mako
@@ -338,7 +338,7 @@ autocmd BufNewFile,BufRead *.html,*.htm  call SelectHTML()
 let html_no_rendering=1
 
 autocmd FileType html,htmldjango,htmljinja,eruby,mako let b:closetag_html_style=1
-autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+autocmd FileType html,xhtml,xml,htmldjango,htmljinja,eruby,mako source ~/.vim/bundle/closetag.vim/plugin/closetag.vim
 
 " CSS
 " ---
