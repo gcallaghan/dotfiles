@@ -6,10 +6,6 @@ git submodule update
 git submodule foreach git submodule init
 git submodule foreach git submodule update
 
-if [ ! -e $PWD/.vim/autoload ]
-then
-	ln -s $PWD/vim-pathogen/autoload $PWD/.vim/autoload
-fi
 
 function doIt() {
 	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
