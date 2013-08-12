@@ -78,3 +78,6 @@
 
 [push]
 	default = simple
+[user]
+	name = Grant Callaghan
+	email = grant.callaghan@gmail.com
