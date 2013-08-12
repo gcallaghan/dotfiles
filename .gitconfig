@@ -78,6 +78,10 @@
 
 [push]
 	default = simple
+
+# Personal Settings
 [user]
 	name = Grant Callaghan
 	email = grant.callaghan@gmail.com
+[credential]
+	helper = osxkeychain
