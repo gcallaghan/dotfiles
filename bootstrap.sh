@@ -1,14 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 cd "$(dirname "${BASH_SOURCE}")"
 git pull
 git submodule init
 git submodule update
 git submodule foreach git submodule init
 git submodule foreach git submodule update
-
-
+git pull origin master
 function doIt() {
-	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" --exclude "README.md" -av . ~
+	rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
+		--exclude "README.md" --exclude "LICENSE-MIT.txt" -av --no-perms . ~
+	source ~/.bash_profile
 }
 
 
