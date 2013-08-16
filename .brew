@@ -25,8 +25,8 @@ brew install narwhal
 # Install more recent versions of some OS X tools
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
-brew tap josegonzalez/homebrew-php
-brew install php55
+#brew tap josegonzalez/homebrew-php
+#brew install php55
 
 # These two formulae didn’t work well last time I tried them:
 #brew install homebrew/dupes/vim
@@ -37,17 +37,22 @@ brew install ack
 #brew install exiv2
 brew install git
 #brew install imagemagick
-brew install lynx
+# brew install lynx #TODO
 brew install node
 brew install pigz
 brew install rename
+
+# JS CLI
 brew install rhino
+brew install spidermonkey 
+brew install v8 
+
 brew install tree
 brew install webkit2png
 brew install zopfli
 
-brew tap homebrew/versions
-brew install lua52
+#brew tap homebrew/versions
+#brew install lua52
 
 # Install native apps
 brew tap phinze/homebrew-cask
@@ -65,7 +70,7 @@ installcask imageoptim
 installcask iterm2
 installcask macvim
 installcask miro-video-converter
-installcask sublime-text
+#installcask sublime-text
 installcask the-unarchiver
 installcask tor-browser
 installcask transmission
