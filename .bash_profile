@@ -49,3 +49,5 @@ source /usr/local/bin/virtualenvwrapper.sh
 
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+export LC_ALL="en_US.UTf-8"
