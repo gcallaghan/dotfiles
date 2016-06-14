@@ -90,7 +90,7 @@
 	# Treat spaces before tabs, lines that are indented with 8 or more spaces, and all kinds of trailing whitespace as an error
     #whitespace = space-before-tab,indent-with-non-tab,trailing-space
 
-	# Make `git rebase` safer on OS X
+	# Make `git rebase` safer on macOS
 	# More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
 	trustctime = false
 
@@ -184,6 +184,7 @@
 [user]
 	name = Grant Callaghan
 	email = grant.callaghan@gmail.com
+	signingkey = FD524787
 [credential]
 	helper = osxkeychain
 	insteadOf = "gist:"
