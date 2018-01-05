@@ -23,6 +23,7 @@ brew install gnu-sed --with-default-names
 # running `chsh`.
 brew install bash
 brew tap homebrew/versions
+brew tap caskroom/fonts
 brew install bash-completion2
 
 # Switch to using brew-installed bash as default shell
@@ -49,6 +50,7 @@ brew install homebrew/php/php56 --with-gmp
 
 # Install font tools.
 brew tap bramstein/webfonttools
+brew cask install font-fira-code
 brew install sfnt2woff
 brew install sfnt2woff-zopfli
 brew install woff2
