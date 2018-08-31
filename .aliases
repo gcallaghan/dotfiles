@@ -151,6 +151,6 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
 
-eval "$(docker-machine env docker)"
 alias dockerrmi='docker rmi -f $(docker images -a -q)'
 alias dockerrm='docker rm -f $(docker ps -a -q)'
+alias tree='tree -I node_modules'

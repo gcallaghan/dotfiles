@@ -1,8 +1,8 @@
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:/usr/local/share/npm/bin:/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
-export NODE_PATH="/usr/local/lib/node"
 export PATH="$HOME/bin:$PATH";
+export LC_ALL="en_US.UTf-8"
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -60,7 +60,12 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source /usr/local/bin/virtualenvwrapper.sh
 
-export LC_ALL="en_US.UTf-8"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+complete -C /usr/local/Cellar/terraform/0.11.7/bin/terraform terraform
 
 # HISTORY
 # Avoid duplicates
@@ -70,3 +75,5 @@ shopt -s histappend
 
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+[ -f $(brew --prefix)/etc/bash_completion ] && . $(brew --prefix)/etc/bash_completion
